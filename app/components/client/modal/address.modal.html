@@ -1,0 +1,48 @@
+<div class="modal-body wrapper-lg">
+  <h3 class="m-t-none m-b font-thin">{{ modalState }} Address Information</h3>
+  <hr />
+  <div class="row">
+    <form name="addressForm">
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Address Type</label>
+          <select class="form-control" ng-model="$parent.address.type" required>
+            <option value=""> - Select Type - </option>
+            <option value="Work Address">Work Address</option>
+            <option value="Home Address">Home Address</option>
+            <option value="Postal Address">Postal Address</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Address Detail 1</label>
+          <input type="text" class="form-control" ng-model="$parent.address.addressLine1" required />
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Address Detail 2</label>
+          <input type="text" class="form-control" ng-model="$parent.address.addressLine2" />
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="form-group">
+          <label>Address Detail 3</label>
+          <input type="text" class="form-control" ng-model="$parent.address.addressLine3" />
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="form-group">
+          <label>Postal Code</label>
+          <input type="text" class="form-control" ng-model="$parent.address.postalCode" required />
+        </div>
+      </div>
+    </form>
+  </div>
+  <hr />
+  <div align="right">
+    <button class="btn btn-primary" type="button" ng-click="ok()" ng-disabled="addressForm.$invalid">Save</button>
+    <button class="btn btn-outline-primary" type="button" ng-click="cancel()">Cancel</button>
+  </div>  
+</div>
