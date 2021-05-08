@@ -48,7 +48,6 @@ app.controller('ClientManagementController', ['$scope', '$state', '$rootScope', 
     $scope.filterArgs.pageSize = $scope.pageSizeSelected;
     $scope.filterArgs.pageIndex = $scope.pageIndex;
     clientService.getClients($scope.filterArgs).then(function (response) {
-      debugger;
       $scope.clients = response.data.clients;
       $scope.totalCount = response.data.totalCount;
     });
@@ -68,7 +67,6 @@ app.controller('ClientManagementController', ['$scope', '$state', '$rootScope', 
     });
 
     modalInstance.result.then(function (client) {
-      debugger;
       var index = $scope.clients.indexOf(client);
       $scope.clients.splice(index, 1);
       toaster.pop('Delete client', "Success", "Client successfully deleted!");

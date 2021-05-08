@@ -1,9 +1,8 @@
-app.service('clientService', function ($http, $q) {
-  var baseUrl = 'http://localhost:64385/api/';
+app.service('clientService', function ($http, $q, settingsService) {
   
   this.getClients = function (client) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/GetClients?pageIndex=' + client.pageIndex + '&pageSize=' + client.pageSize, JSON.stringify(client)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Clients/GetClients?pageIndex=' + client.pageIndex + '&pageSize=' + client.pageSize, JSON.stringify(client)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -13,7 +12,7 @@ app.service('clientService', function ($http, $q) {
 
   this.getClient = function (id) {
     var deferred = $q.defer()    
-    $http.get(baseUrl + 'Clients/GetClient?id=' + id).then(function (data) {        
+    $http.get(settingsService.settings.baseUrl + 'Clients/GetClient?id=' + id).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -23,7 +22,7 @@ app.service('clientService', function ($http, $q) {
 
   this.addClient = function (client) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/AddClient', JSON.stringify(client)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Clients/AddClient', JSON.stringify(client)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -33,7 +32,7 @@ app.service('clientService', function ($http, $q) {
 
   this.editClient = function (client) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/EditClient', JSON.stringify(client)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Clients/EditClient', JSON.stringify(client)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -43,7 +42,7 @@ app.service('clientService', function ($http, $q) {
 
   this.deleteClient = function (client) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/DeleteClient', JSON.stringify(client)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Clients/DeleteClient', JSON.stringify(client)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -53,7 +52,7 @@ app.service('clientService', function ($http, $q) {
 
   this.exportClients = function () {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/ExportClients').then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Clients/ExportClients').then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);

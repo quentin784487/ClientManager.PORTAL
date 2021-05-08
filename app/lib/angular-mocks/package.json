@@ -2,7 +2,7 @@
   "_args": [
     [
       "angular-mocks@1.8.0",
-      "D:\\_repo\\ClientManager\\Portal"
+      "C:\\_systems\\ClientManager\\ClientManager.PORTAL"
     ]
   ],
   "_development": true,
@@ -27,7 +27,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/angular-mocks/-/angular-mocks-1.8.0.tgz",
   "_spec": "1.8.0",
-  "_where": "D:\\_repo\\ClientManager\\Portal",
+  "_where": "C:\\_systems\\ClientManager\\ClientManager.PORTAL",
   "author": {
     "name": "Angular Core Team",
     "email": "angular-core+npm@google.com"

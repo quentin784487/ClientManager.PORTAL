@@ -75,7 +75,6 @@ app.controller('ClientCrudController', ['$scope', '$state', '$stateParams', '$ui
     });
 
     modalInstance.result.then(function (address) {
-      debugger;
       if (modalState == 'Add') {
         toaster.pop('Add Address', "Success", "Address successfully added!");
         $scope.client.addressInformation.push(address);
@@ -152,7 +151,6 @@ app.controller('ClientCrudController', ['$scope', '$state', '$stateParams', '$ui
     });
 
     modalInstance.result.then(function (object) {    
-      debugger;     
       switch (action) {
         case 'address':
             var index = $scope.client.addressInformation.indexOf(object);
@@ -234,7 +232,6 @@ app.controller('ContactInformationController', ['$scope', '$uibModalInstance', '
 app.controller('DeleteInformationController', ['$scope', '$uibModalInstance', 'addressService', 'contactService', 'object', 'action', 'clientState', function($scope, $uibModalInstance, addressService, contactService, object, action, clientState) {
   $scope.action = action;
   $scope.ok = function () {
-    debugger;
     if (clientState == 'Edit') {
       switch (action) {
         case 'address':                   

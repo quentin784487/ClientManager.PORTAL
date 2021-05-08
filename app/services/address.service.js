@@ -1,9 +1,8 @@
-app.service('addressService', function ($http, $q) {
-  var baseUrl = 'http://localhost:64385/api/';
+app.service('addressService', function ($http, $q, settingsService) {
   
   this.saveAddress = function (address) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Address/AddAddressInformation', JSON.stringify(address)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Address/AddAddressInformation', JSON.stringify(address)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -13,7 +12,7 @@ app.service('addressService', function ($http, $q) {
 
   this.editAddress = function (address) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Address/EditAddressInformation', JSON.stringify(address)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Address/EditAddressInformation', JSON.stringify(address)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -23,7 +22,7 @@ app.service('addressService', function ($http, $q) {
 
   this.deleteAddress = function (address) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Address/DeleteAddressInformation', JSON.stringify(address)).then(function (data) {        
+    $http.post(settingsService.settings.baseUrl + 'Address/DeleteAddressInformation', JSON.stringify(address)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
