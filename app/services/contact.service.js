@@ -3,7 +3,7 @@ app.service('contactService', function ($http, $q) {
   
   this.saveContact = function (contact) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/AddContactInformation', JSON.stringify(contact)).then(function (data) {        
+    $http.post(baseUrl + 'Contact/AddContactInformation', JSON.stringify(contact)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -13,7 +13,7 @@ app.service('contactService', function ($http, $q) {
 
   this.editContact = function (contact) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/EditContactInformation', JSON.stringify(contact)).then(function (data) {        
+    $http.post(baseUrl + 'Contact/EditContactInformation', JSON.stringify(contact)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
@@ -23,7 +23,7 @@ app.service('contactService', function ($http, $q) {
 
   this.deleteContact = function (contact) {
     var deferred = $q.defer()    
-    $http.post(baseUrl + 'Clients/DeleteContactInformation', JSON.stringify(contact)).then(function (data) {        
+    $http.post(baseUrl + 'Contact/DeleteContactInformation', JSON.stringify(contact)).then(function (data) {        
         deferred.resolve(data);
       }, function (error) {
         deferred.reject(error);
